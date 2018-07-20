@@ -26,7 +26,7 @@ tags: [
 
 ```
 var List = React.createClass({
-    //1.创建阶段
+    // 1.创建阶段
     getDefaultProps:function() {
         console.log("getDefaultProps");
         return {};
