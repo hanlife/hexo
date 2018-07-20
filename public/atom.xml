@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>谁也替代不了</title>
+  
+  <subtitle>做更好的自己。</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://hanlife.github.io/"/>
+  <updated>2018-07-19T08:01:02.094Z</updated>
+  <id>https://hanlife.github.io/</id>
+  
+  <author>
+    <name>HanLaiFu</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>探索React生命周期</title>
+    <link href="https://hanlife.github.io/2018/07/19/react-lifecycle/"/>
+    <id>https://hanlife.github.io/2018/07/19/react-lifecycle/</id>
+    <published>2018-07-19T07:57:42.000Z</published>
+    <updated>2018-07-19T08:01:02.094Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;React生命周期&quot;&gt;&lt;a href=&quot;#React生命周期&quot; class=&quot;headerlink&quot; title=&quot;React生命周期&quot;&gt;&lt;/a&gt;React生命周期&lt;/h1&gt;&lt;p&gt;在组件的整个生命周期中，随着该组件的props或者state发生改变，其DOM表现也会有相应的变化。一个组件就是一个状态机，对于特定地输入，它总返回一致的输出。&lt;/p&gt;
+&lt;h2 id=&quot;组件的生命周期如下&quot;&gt;&lt;a href=&quot;#组件的生命周期如下&quot; class=&quot;headerlink&quot; title=&quot;组件的生命周期如下&quot;&gt;&lt;/a&gt;组件的生命周期如下&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;实例化&lt;/li&gt;
+&lt;li&gt;存在期&lt;/li&gt;
+&lt;li&gt;销毁期&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/image/ajs-life.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="React" scheme="https://hanlife.github.io/categories/React/"/>
+    
+    
+      <category term="React" scheme="https://hanlife.github.io/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端这两年（篇二）</title>
+    <link href="https://hanlife.github.io/2018/07/18/essay-2/"/>
+    <id>https://hanlife.github.io/2018/07/18/essay-2/</id>
+    <published>2018-07-18T08:05:41.000Z</published>
+    <updated>2018-07-18T08:08:30.979Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;项目一：智造360平台&quot;&gt;&lt;a href=&quot;#项目一：智造360平台&quot; class=&quot;headerlink&quot; title=&quot;项目一：智造360平台&quot;&gt;&lt;/a&gt;项目一：智造360平台&lt;/h1&gt;&lt;h4 id=&quot;网站简介&quot;&gt;&lt;a href=&quot;#网站简介&quot; class=&quot;headerlink&quot; title=&quot;网站简介&quot;&gt;&lt;/a&gt;网站简介&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;智造360是国内最大的工业自动化设备零配件B2B交易平台,汇集国内外众多自动化设备用标准件品牌与机械加工工厂,为采购商提供公平、透明的一站式采购服务,为供应商提供机械零件外协加工订单信息! 链接&lt;a href=&quot;http://www.im360b2b.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;智造360&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;前端框架&quot;&gt;&lt;a href=&quot;#前端框架&quot; class=&quot;headerlink&quot; title=&quot;前端框架&quot;&gt;&lt;/a&gt;前端框架&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;HTML+CSS+JQuery+easyUI&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;业务流程&quot;&gt;&lt;a href=&quot;#业务流程&quot; class=&quot;headerlink&quot; title=&quot;业务流程&quot;&gt;&lt;/a&gt;业务流程&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;流程：有注册登录（QQ号或手机号），资料完善（供应商或采购商），供应商发布订单，采购商下单，确认订单，支付，线下（发货-&amp;gt;物流-&amp;gt;收货），确认订单，付款，对账。典型P2P商城流程&lt;br&gt;
+    
+    </summary>
+    
+      <category term="随记" scheme="https://hanlife.github.io/categories/%E9%9A%8F%E8%AE%B0/"/>
+    
+    
+      <category term="JavaScript" scheme="https://hanlife.github.io/tags/JavaScript/"/>
+    
+      <category term="随记" scheme="https://hanlife.github.io/tags/%E9%9A%8F%E8%AE%B0/"/>
+    
+      <category term="项目优化" scheme="https://hanlife.github.io/tags/%E9%A1%B9%E7%9B%AE%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="MVC" scheme="https://hanlife.github.io/tags/MVC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端这两年（篇一）</title>
+    <link href="https://hanlife.github.io/2018/07/18/essay/"/>
+    <id>https://hanlife.github.io/2018/07/18/essay/</id>
+    <published>2018-07-18T02:20:59.000Z</published>
+    <updated>2018-07-18T08:08:33.359Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;初入前端（篇一）&quot;&gt;&lt;a href=&quot;#初入前端（篇一）&quot; class=&quot;headerlink&quot; title=&quot;初入前端（篇一）&quot;&gt;&lt;/a&gt;初入前端（篇一）&lt;/h1&gt;&lt;p&gt;16年年初正式接触前端，当时学习HTML+CSS的时候还根本不知道前端是什么，仅仅知道根据图片用HTML+CSS画出来。当时我学的很快，仿过百度首页，百度新闻，蘑菇街首页，京东首页首屏等等，感觉没有仿不出来的网页！知道接触JavaScript，才知道编程的难度；&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;浏览器篇&quot;&gt;&lt;a href=&quot;#浏览器篇&quot; class=&quot;headerlink&quot; title=&quot;浏览器篇&quot;&gt;&lt;/a&gt;浏览器篇&lt;/h2&gt;&lt;p&gt;我觉得学习JS最先要了解的就是浏览器的发展。就像正在想了解一个人，必须了解他的前世今生，这样才能更深层次的认识他。&lt;/p&gt;
+&lt;h5 id=&quot;起源&quot;&gt;&lt;a href=&quot;#起源&quot; class=&quot;headerlink&quot; title=&quot;起源&quot;&gt;&lt;/a&gt;起源&lt;/h5&gt;&lt;blockquote&gt;
+&lt;p&gt;1994年开始，网景通信公司推出了代号为“网景导航者”的网景浏览器1.0；随后微软开发了Internet Explorer，并与其微软操作系统捆绑销售；因此IE立马占领了浏览器市场，为挽回市场份额，网景开源了网景浏览器源代码，成立了非正式组织Mozilla，至此Mozilla浏览器开始登上舞台；&lt;br&gt;这段期间IE市场份额第一，并没有过多的去更新IE，因此IE6-IE8并没有更新什么东西，&lt;br&gt;2008年chrome横空出世。界面简洁、加载快速、数据安全等这些特点让chrome的市场份额逐步攀升。当微软意识到chrome开始逐步侵蚀自己的市场时，开始频繁更新IE,2011年IE9发布，2012年IE10发布，2013年IE11发布，最后IE的代码实在适应不了新的要求的web技术，就重新开发了一个名为”edge”的浏览器用来取代IE&lt;br&gt;
+    
+    </summary>
+    
+      <category term="随记" scheme="https://hanlife.github.io/categories/%E9%9A%8F%E8%AE%B0/"/>
+    
+    
+      <category term="JavaScript" scheme="https://hanlife.github.io/tags/JavaScript/"/>
+    
+      <category term="浏览器" scheme="https://hanlife.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+      <category term="随记" scheme="https://hanlife.github.io/tags/%E9%9A%8F%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS3 clip rect应用</title>
+    <link href="https://hanlife.github.io/2018/07/17/rect/"/>
+    <id>https://hanlife.github.io/2018/07/17/rect/</id>
+    <published>2018-07-17T03:31:34.000Z</published>
+    <updated>2018-07-17T03:59:37.724Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;定义和用法&quot;&gt;&lt;a href=&quot;#定义和用法&quot; class=&quot;headerlink&quot; title=&quot;定义和用法&quot;&gt;&lt;/a&gt;定义和用法&lt;/h2&gt;&lt;p&gt;clip 属性剪裁绝对定位元素。属性允许您规定一个元素的可见尺寸，这样此元素就会被修剪并显示为这个形状。定义一个剪裁矩形。对于一个绝对定义元素，在这个矩形内的内容才可见。出了这个剪裁区域的内容会根据overflow的值来处理。剪裁区域可能比元素的内容区大，也可能比内容区小。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;可能的值&quot;&gt;&lt;a href=&quot;#可能的值&quot; class=&quot;headerlink&quot; title=&quot;可能的值&quot;&gt;&lt;/a&gt;可能的值&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;值&lt;/th&gt;
+&lt;th&gt;描叙&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;shape&lt;/td&gt;
+&lt;td&gt;设置元素的形状。唯一合法的形状值是：rect (top, right, bottom, left)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;auto&lt;/td&gt;
+&lt;td&gt;默认值。不应用任何剪裁。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;inherit&lt;/td&gt;
+&lt;td&gt;规定应该从父元素继承 clip 属性的值。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="CSS" scheme="https://hanlife.github.io/categories/CSS/"/>
+    
+    
+      <category term="CSS3" scheme="https://hanlife.github.io/tags/CSS3/"/>
+    
+      <category term="clip" scheme="https://hanlife.github.io/tags/clip/"/>
+    
+      <category term="rect" scheme="https://hanlife.github.io/tags/rect/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ajax</title>
+    <link href="https://hanlife.github.io/2018/07/16/ajax/"/>
+    <id>https://hanlife.github.io/2018/07/16/ajax/</id>
+    <published>2018-07-16T03:31:34.000Z</published>
+    <updated>2018-07-18T08:09:21.370Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Ajax实现代码&quot;&gt;&lt;a href=&quot;#Ajax实现代码&quot; class=&quot;headerlink&quot; title=&quot;Ajax实现代码&quot;&gt;&lt;/a&gt;Ajax实现代码&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;//创建一个XMLHttpRequest对象&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var xhr = new XMLHttpRequest();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//监听statechange事件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;xhr.onreadystatechange = function() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  /**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	 * XMLHttpRequest的readystate有五个状态&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	 * 0 还没有调用open方法&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	 * 1 已调用open方法，尚未调用send方法&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	 * 2 已调用send，但尚未接收到响应&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	 * 3 已接收到部分响应数据&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	 * 4 已经接收到到全部数据，而且可以在客户端使用&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	 */&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  if (xhr.readystate == 4) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    //状态码在200 到 300表示请求成功，状态码304表示资源没有被修改，可以直接使用缓存中的版本&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    if ((xhr.status &amp;gt;=200 &amp;amp;&amp;amp; xhr.status &amp;lt; 300) || xhr.status == 304)) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      alert(xhr.responseText);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125; else &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      //发生错误打印状态码，&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      alert(&amp;quot;Request was unsuccessful: &amp;quot; + xhr.status);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//打开请求以备发送&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;xhr.open(&amp;apos;post&amp;apos;, &amp;apos;http://example.com&amp;apos;, false);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//设置请求头&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;xhr.setRequestHeader(&amp;apos;Content-Type&amp;apos;, &amp;apos;application/x-www-form-urlencoded&amp;apos;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//序列化表单&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var form = document.getElementById(&amp;apos;test-form&amp;apos;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//发送请求&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;xhr.send(serialize(form));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://hanlife.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://hanlife.github.io/tags/JavaScript/"/>
+    
+      <category term="ajax" scheme="https://hanlife.github.io/tags/ajax/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一篇博客的艰难</title>
+    <link href="https://hanlife.github.io/2018/07/16/hexo/"/>
+    <id>https://hanlife.github.io/2018/07/16/hexo/</id>
+    <published>2018-07-16T03:03:00.000Z</published>
+    <updated>2018-07-18T08:08:36.247Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;搭建自己的博客这个想法已经在我脑子里转了无数次，为什么现在才开始行动。最主要的原因就是无意间看到一位妹子的博客主页，她的博客风格，博客内容都深深打动了我。后来通过各种渠道打听到她使用的是hexo搭建博客。再后来就开始了我的博客之路。&lt;br&gt;老实说，Hexo的环境搭建对我来说并不困难，教程很多很详细，很快我就搭建好了。但是又一个难点就是写文章与github托管。对于md的编写并不熟练的我，根本无从下手，只能让自己的博客一直处于hello,world主页。&lt;/p&gt;
+&lt;h2 id=&quot;初探-Markdown-语法&quot;&gt;&lt;a href=&quot;#初探-Markdown-语法&quot; class=&quot;headerlink&quot; title=&quot;初探 Markdown 语法&quot;&gt;&lt;/a&gt;初探 Markdown 语法&lt;/h2&gt;&lt;p&gt;写作主要使用语法：&lt;br&gt;1、title/data/tags：分别对应文章标题，文章时间，以及文章标签&lt;br&gt;2、标题：#一级标题、##二级标题、###三级标题；以此类推&lt;br&gt;3、超链接：行内形式&lt;a href=&quot;https://hanlife.github.io&quot;&gt;我的博客&lt;/a&gt;；自动链接：我的博客地址：&lt;a href=&quot;https://hanlife.github.io&quot;&gt;https://hanlife.github.io&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="hexo" scheme="https://hanlife.github.io/categories/hexo/"/>
+    
+    
+      <category term="JavaScript" scheme="https://hanlife.github.io/tags/JavaScript/"/>
+    
+      <category term="hexo" scheme="https://hanlife.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>

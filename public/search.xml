@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[探索React生命周期]]></title>
+    <url>%2F2018%2F07%2F19%2Freact-lifecycle%2F</url>
+    <content type="text"><![CDATA[React生命周期在组件的整个生命周期中，随着该组件的props或者state发生改变，其DOM表现也会有相应的变化。一个组件就是一个状态机，对于特定地输入，它总返回一致的输出。 组件的生命周期如下 实例化 存在期 销毁期 实例化12345678910111213141516171819202122232425262728293031var List = React.createClass(&#123; //1.创建阶段 getDefaultProps:function() &#123; console.log(&quot;getDefaultProps&quot;); return &#123;&#125;; &#125;, //2.实例化阶段 getInitialState:function() &#123; console.log(&quot;getInitialState&quot;); return &#123;&#125;; &#125;, //render之前调用，业务逻辑都应该放在这里，如对state的操作等 componentWillMount:function() &#123; console.log(&quot;componentWillMount&quot;); &#125;, //渲染并返回一个虚拟DOM render:function() &#123; console.log(&quot;render&quot;); return( &lt;div&gt; hello &lt;strong&gt; &#123;this.props.name&#125; &lt;/strong&gt;&lt;/div&gt; ); &#125;, //该方法发生在render方法之后。在该方法中，ReactJS会使用render生成返回的虚拟DOM对象来创建真实的DOM结构 componentDidMount:function() &#123; console.log(&quot;componentDidMount&quot;); &#125;,&#125;); 其输出结果就是： 12345getDefaultPropsgetInitialStatecomponentWillMountrendercomponentDidMount getInitialState 初始化组件的state的值，其返回值会赋值给组件的this.state属性。对于组件的每个实例来说，这个方法的调用次数有且只有一次。与getDefaultProps方法不同的是，每次实例创建时该方法都会被调用一次。 componentWillMount 此方法会在完成首次渲染之前被调用。这也是在render方法调用前可以修改组件state的最后一次机会。 render 生成页面需要的虚拟DOM结构，用来表示组件的输出。render方法需要满足：（1）只能通过this.props和this.state访问数据；（2）可以返回null、false或者任何React组件；（3）只能出现一个顶级组件；（4）必需纯净，意味着不能改变组件的状态或者修改DOM的输出。 componentDidMount 该方法发生在render方法成功调用并且真实的DOM已经被渲染之后，在该函数内部可以通过this.getDOMNode()来获取当前组件的节点。然后就可以像Web开发中的那样操作里面的DOM元素了。 创建阶段这个阶段只会触发一个getDefaultProps方法，该方法返回一个对象，并且缓存下来。然后与父组件指定的props对象合并，最后赋值给this.props作为该组件的默认属性。对于那些没有被父辈组件指定的props属性的新建实例来说，这个方法返回的对象可用于为实例设置默认的props值。props属性又是什么呢，它是一个对象，是组件用来接收外面传来的参数的，组件内部是不允许修改自己的props属性的，只能通过父组件来修改。在getDefaultProps方法中，是可以设定props默认值的。 实例化阶段该阶段主要发生在实例化组件类的时候，也就是该组件类被调用的时候： 1ReactDOM.render(&lt;NewView name=&quot;ReactJS&quot;&gt;children&lt;/NewView&gt;, document.body); 存在期123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869var NewView = React.createClass(&#123; //1.创建阶段 getDefaultProps:function() &#123; console.log(&quot;getDefaultProps&quot;); return &#123;&#125;; &#125;, //2.实例化阶段 getInitialState:function() &#123; console.log(&quot;getInitialState&quot;); return &#123; num:1 &#125;; &#125;, //render之前调用，业务逻辑都应该放在这里，如对state的操作等 componentWillMount:function() &#123; console.log(&quot;componentWillMount&quot;); &#125;, //渲染并返回一个虚拟DOM render:function() &#123; console.log(&quot;render&quot;); return( &lt;div&gt; hello &lt;strong&gt; &#123;this.props.name&#125; &lt;/strong&gt; &lt;button onClick=&#123;this.handleAddNumber&#125;&gt; hello &lt;strong&gt; &#123;this.state.num&#125; &lt;/strong&gt;&lt;/button&gt; &lt;/div&gt; ); &#125;, //该方法发生在render方法之后。在该方法中，ReactJS会使用render生成返回的虚拟DOM对象来创建真实的DOM结构 componentDidMount:function() &#123; console.log(&quot;componentDidMount&quot;); &#125;, //3.更新阶段 componentWillReceiveProps:function() &#123; console.log(&quot;componentWillReceiveProps&quot;); &#125;, //是否需要更新 shouldComponentUpdate:function() &#123; console.log(&quot;shouldComponentUpdate&quot;); return true; &#125;, //将要更新 componentWillUpdate:function() &#123; console.log(&quot;componentWillUpdate&quot;); &#125;, //更新完毕 componentDidUpdate:function() &#123; console.log(&quot;componentDidUpdate&quot;); &#125;, //4.销毁阶段 componentWillUnmount:function() &#123; console.log(&quot;componentWillUnmount&quot;); &#125;, // 处理点击事件 handleAddNumber:function() &#123; console.log(&quot;add num&quot;); this.setState(&#123;num:this.state.num+1&#125;); this.setProps(&#123;name:&quot;newName&quot;&#125;); &#125;&#125;); 输出结果为(不包含)： 123456add numcomponentWillReceivePropsshouldComponentUpdatecomponentWillUpdaterendercomponentDidUpdate componentWillReceiveProps 在任意时刻，组件的props都可以通过父辈组件来更改。当组件接收到新的props(这里不同于state）时，会触发该函数，我们同时也获得更改props对象及更新state的机会。 shouldComponentUpdate 该方法用来拦截新的props和state，然后开发者可以根据自己设定逻辑，做出要不要更新render的决定，让它更快。 componentWillUpdate 与componentWillMount方法类似，组件上会接收到新的props或者state渲染之前，调用该方法。但是不可以在该方法中更新state和props。 render 生成页面需要的虚拟DOM结构，并返回该结构componentDidUpdate 与componentDidMount类似，更新已经渲染好的DOM。 生命周期之销毁&amp;清理每当react使用完一个组件，这个组件就必须从DOM中卸载随后被销毁。此时，仅有的一个钩子函数会做出响应，完成所有的清理与销毁工作，这很必要。 componentWillUnmount最后，随着一个组件从它的层级结构中移除，这个组件的生命也就走到了尽头。该方法会在组件被移出之前调被调用。在componentDidMount方法中添加的所有任务都需要在该方法中撤销，比如说创建的定时器或者添加的事件监听等。]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+      <tags>
+        <tag>React</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[前端这两年（篇二）]]></title>
+    <url>%2F2018%2F07%2F18%2Fessay-2%2F</url>
+    <content type="text"><![CDATA[项目一：智造360平台网站简介 智造360是国内最大的工业自动化设备零配件B2B交易平台,汇集国内外众多自动化设备用标准件品牌与机械加工工厂,为采购商提供公平、透明的一站式采购服务,为供应商提供机械零件外协加工订单信息! 链接智造360 前端框架 HTML+CSS+JQuery+easyUI 业务流程 流程：有注册登录（QQ号或手机号），资料完善（供应商或采购商），供应商发布订单，采购商下单，确认订单，支付，线下（发货-&gt;物流-&gt;收货），确认订单，付款，对账。典型P2P商城流程 开发总结 部分页面采用服务端渲染，考虑SEO；个人中心模块大部分都是Ajax异步渲染；列表部分采用分页异步请求（自己封装的分页插件；图片展示利用懒加载；页面图标引入字体图标库，以及雪碧图；解决IE9的兼容问题； 项目优化 首页服务器缓存，缓存时间未12小时； 静态资源增加时间戳； CSS+JS压缩及合并； JS引用CDN加速，并移至页面底部； common.JS提取； 图片图标压缩； 模块整合，如封装错误提示，弹框提示，Ajax请求，分页插件，时间插件，区域选择插件 整合工具类util.js； 成效：网站首页打开时间从7s优化到1.5s内，其他网页打开速度提高20%； 结言 整个项目做下来，增强了MVC这种开发模式的认识，以及前后端数据交互的知识，提高了对项目整体规划能力，熟练操作JQuery；同时在项目中熟练运用OOP编程，学会优雅降级兼容IE9浏览器。 未完待续、、、(智造360+小程序)]]></content>
+      <categories>
+        <category>随记</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>随记</tag>
+        <tag>项目优化</tag>
+        <tag>MVC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[前端这两年（篇一）]]></title>
+    <url>%2F2018%2F07%2F18%2Fessay%2F</url>
+    <content type="text"><![CDATA[初入前端（篇一）16年年初正式接触前端，当时学习HTML+CSS的时候还根本不知道前端是什么，仅仅知道根据图片用HTML+CSS画出来。当时我学的很快，仿过百度首页，百度新闻，蘑菇街首页，京东首页首屏等等，感觉没有仿不出来的网页！知道接触JavaScript，才知道编程的难度； 浏览器篇我觉得学习JS最先要了解的就是浏览器的发展。就像正在想了解一个人，必须了解他的前世今生，这样才能更深层次的认识他。 起源 1994年开始，网景通信公司推出了代号为“网景导航者”的网景浏览器1.0；随后微软开发了Internet Explorer，并与其微软操作系统捆绑销售；因此IE立马占领了浏览器市场，为挽回市场份额，网景开源了网景浏览器源代码，成立了非正式组织Mozilla，至此Mozilla浏览器开始登上舞台；这段期间IE市场份额第一，并没有过多的去更新IE，因此IE6-IE8并没有更新什么东西，2008年chrome横空出世。界面简洁、加载快速、数据安全等这些特点让chrome的市场份额逐步攀升。当微软意识到chrome开始逐步侵蚀自己的市场时，开始频繁更新IE,2011年IE9发布，2012年IE10发布，2013年IE11发布，最后IE的代码实在适应不了新的要求的web技术，就重新开发了一个名为”edge”的浏览器用来取代IE PC浏览器内核 1997年 Trident 1998年 KHTML 2000年 Gecko 2001年 WebKit 2003年 Presto 2008年 Chromium 2010年 混合引擎(双核） 2013年 Blink 2015年 EdgeHTML 浏览器家谱 移动浏览器内核 webkit Chromium U3内核 x5内核 JavaScript篇在我看来，学习JS就是学习BOM、DOM了。 什么是BOM BOM（Browser Object Model）即浏览器对象模型。 BOM提供了独立于内容 而与浏览器窗口进行交互的对象； 由于BOM主要用于管理窗口与窗口之间的通讯，因此其核心对象是window； BOM由一系列相关的对象构成，并且每个对象都提供了很多方法与属性； BOM缺乏标准，JavaScript语法的标准化组织是ECMA，DOM的标准化组织是W3C，BOM最初是Netscape浏览器标准的一部分。 什么是DOM DOM 是 Document Object Model（文档对象模型）的缩写。DOM 是 W3C（万维网联盟）的标准。DOM 定义了访问 HTML 和 XML 文档的标准：“W3C 文档对象模型 （DOM） 是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。” W3C DOM 标准被分为 3 个不同的部分： 核心 DOM - 针对任何结构化文档的标准模型 XML DOM - 针对 XML 文档的标准模型 HTML DOM - 针对 HTML 文档的标准模型 XML DOM 定义了所有 XML 元素的对象和属性，以及访问它们的方法。HTML DOM 是关于如何获取、修改、添加或删除 HTML 元素的标准。 JQuery福音正在为学习JS苦恼的时候，听到了JQuery库。 什么是JQuery JQuery是一个封装JavaScript的库，封装了复杂的JS操作。jQuery设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互。jQuery的核心特性可以总结为：具有独特的链式语法和短小清晰的多功能接口；具有高效灵活的css选择器，并且可对CSS选择器进行扩展；拥有便捷的插件扩展机制和丰富的插件。jQuery兼容各种主流浏览器，如IE 6.0+、FF 1.5+、Safari 2.0+、Opera 9.0+等。 JQuery的优点 轻量级 强大的选择器 出色的DOM操作的封装 可靠的事件处理机制 完善的Ajax 不污染顶级变量 出色的浏览器兼容性 链式操作方式 隐式迭代 行为层与结构层的分离 丰富的插件支持 完善的文档 开源 结言学习完HTML+CSS+JQuery，了解浏览器发展史后，正式的开始了我的工作，也就是我的第一个项目（智造360平台开发） 未完待续、、、]]></content>
+      <categories>
+        <category>随记</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>浏览器</tag>
+        <tag>随记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CSS3 clip rect应用]]></title>
+    <url>%2F2018%2F07%2F17%2Frect%2F</url>
+    <content type="text"><![CDATA[定义和用法clip 属性剪裁绝对定位元素。属性允许您规定一个元素的可见尺寸，这样此元素就会被修剪并显示为这个形状。定义一个剪裁矩形。对于一个绝对定义元素，在这个矩形内的内容才可见。出了这个剪裁区域的内容会根据overflow的值来处理。剪裁区域可能比元素的内容区大，也可能比内容区小。 可能的值 值 描叙 shape 设置元素的形状。唯一合法的形状值是：rect (top, right, bottom, left) auto 默认值。不应用任何剪裁。 inherit 规定应该从父元素继承 clip 属性的值。 示例HTML：1&lt;div class=&quot;rect&quot;&gt;&lt;/div&gt; CSS： 1234567891011121314151617181920212223242526272829303132333435363738394041.rect &#123; width: 200px; height: 200px; background-color: pink; position: relative; margin: 100px; &#125; .rect::before, .rect::after &#123; position: absolute; top: 0; bottom: 0; left: 0; right: 0; content: &apos;&apos;; z-index: -1; margin: -5%; box-shadow: inset 0 0 0 2px; animation: clipMe 8s linear infinite; &#125; .rect::after &#123; animation-delay: -4s; &#125; @keyframes clipMe &#123; 0%, 100% &#123; clip: rect(0, 220px, 2px, 0) &#125; 25% &#123; clip: rect(0, 2px, 220px, 0) &#125; 50% &#123; clip: rect(218px, 220px, 220px, 0) &#125; 75% &#123; clip: rect(0, 220px, 220px, 218px) &#125; &#125; 效果]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS3</tag>
+        <tag>clip</tag>
+        <tag>rect</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ajax]]></title>
+    <url>%2F2018%2F07%2F16%2Fajax%2F</url>
+    <content type="text"><![CDATA[Ajax实现代码12345678910111213141516171819202122232425262728293031//创建一个XMLHttpRequest对象var xhr = new XMLHttpRequest();//监听statechange事件xhr.onreadystatechange = function() &#123; /** * XMLHttpRequest的readystate有五个状态 * 0 还没有调用open方法 * 1 已调用open方法，尚未调用send方法 * 2 已调用send，但尚未接收到响应 * 3 已接收到部分响应数据 * 4 已经接收到到全部数据，而且可以在客户端使用 */ if (xhr.readystate == 4) &#123; //状态码在200 到 300表示请求成功，状态码304表示资源没有被修改，可以直接使用缓存中的版本 if ((xhr.status &gt;=200 &amp;&amp; xhr.status &lt; 300) || xhr.status == 304)) &#123; alert(xhr.responseText); &#125; else &#123; //发生错误打印状态码， alert(&quot;Request was unsuccessful: &quot; + xhr.status); &#125; &#125;&#125;//打开请求以备发送xhr.open(&apos;post&apos;, &apos;http://example.com&apos;, false);//设置请求头xhr.setRequestHeader(&apos;Content-Type&apos;, &apos;application/x-www-form-urlencoded&apos;);//序列化表单var form = document.getElementById(&apos;test-form&apos;);//发送请求xhr.send(serialize(form)); XMLHttpRequest对象所有现代浏览器 (IE7+、Firefox、Chrome、Safari 以及 Opera) 都内建了 XMLHttpRequest 对象。 创建 XMLHttpRequest 对象的语法：1xmlhttp=new XMLHttpRequest(); 老版本的 Internet Explorer （IE5 和 IE6）使用 ActiveX 对象： 1xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;); 因此 在创建XMLHttpRequest对象时需要做兼容： 12345678if (window.XMLHttpRequest) &#123;// code for all new browsers xmlhttp=new XMLHttpRequest(); &#125;else if (window.ActiveXObject) &#123;// code for IE5 and IE6 xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;); &#125; onreadystatechangeonreadystatechange 是一个事件句柄。它的值 (state_Change) 是一个函数的名称，当 XMLHttpRequest 对象的状态发生改变时，会触发此函数。状态从 0 (uninitialized) 到 4 (complete) 进行变化。仅在状态为 4 时，我们才执行代码。 readyState 状态码 含义 0 还未调用 1 当open方法被成功调用 2 当send方法被调用，成功接收到HTTP响应头(HEADERS_RECEIVED) 3 一旦HTTP响应内容开始加载(LOADING) 4 一旦HTTP响应内容结束加载(DONE) setRequestHeader设置请求头1setRequestHeader( Name, Value ) 第一个参数是header的字符串名称，第二个参数是字符串值。如果请求需要多个header，这个方法就要被调用多次。这个方法附加的请求头，在下次open方法调用时会被清空。 send方法1send(Data) 如果不需要发送内容，这个参数可以省略。W3C草案声明这个参数可以是任意类型的值只要能被js转成字符串，除了DOM对象。如果用户代理无法序列化这个参数，这个参数会被忽略。Firefox3.0.x以及之前版本在send方法没传参数时会抛出异常。 如果参数是DOM对象，用户代理应该确保文档已经被转成XML格式，通过文档对象的inputEncoding属性编码。如果请求头的Content-Type还没有通过setRequestHeader方法设置，用户代理应该自动的增加一个值”application/xml;charset=charset”，其中的charset应该是用来编码文档的编码格式。 如果用户代理被配置成使用代理服务器，XMLHttpRequest对象应该适当修改请求连接代理而不是源服务器，发送Proxy-Authorization头配置。 abort方法如果XMLHttpRequest对象的readyState属性还没有变成4，这个方法可以终止请求。这个方法可以确保异步请求中的回调不被执行。 1abort() responseText当成功调用XMLHttpRequest对象的send方法之后，如果服务端响应式格式正确的XML，并且已经把Content-Type头设置成用户代理支持的XML类型，XMLHttpRequest对象的responseXML属性将会包含一个DOM文档对象。另外一个属性responseText将会包含服务端返回的文本类型，而不管它是否被理解为XML。]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>ajax</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[第一篇博客的艰难]]></title>
+    <url>%2F2018%2F07%2F16%2Fhexo%2F</url>
+    <content type="text"><![CDATA[搭建自己的博客这个想法已经在我脑子里转了无数次，为什么现在才开始行动。最主要的原因就是无意间看到一位妹子的博客主页，她的博客风格，博客内容都深深打动了我。后来通过各种渠道打听到她使用的是hexo搭建博客。再后来就开始了我的博客之路。老实说，Hexo的环境搭建对我来说并不困难，教程很多很详细，很快我就搭建好了。但是又一个难点就是写文章与github托管。对于md的编写并不熟练的我，根本无从下手，只能让自己的博客一直处于hello,world主页。 初探 Markdown 语法写作主要使用语法：1、title/data/tags：分别对应文章标题，文章时间，以及文章标签2、标题：#一级标题、##二级标题、###三级标题；以此类推3、超链接：行内形式我的博客；自动链接：我的博客地址：https://hanlife.github.io4、列表： 无序列表项1 无序列表项2 无序列表项3 5、有序列表 1.有序列表项1 2.有序列表项2 3.有序列表项36、插入图片]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>
